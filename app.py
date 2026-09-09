@@ -14,7 +14,7 @@ app = Flask(__name__)
 # Load trained CNN model
 # ==========================================
 
-model = load_model("models/mnist_cnn.keras")
+model = load_model("models/mnist_cnn.keras", compile=False)
 
 
 # ==========================================
