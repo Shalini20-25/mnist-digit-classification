@@ -1,6 +1,6 @@
 # MNIST Digit Classifier 🧠
 
-A web-based handwritten digit recognition application built using a **Convolutional Neural Network (CNN)** and **Flask**.
+An interactive deep learning application that recognizes handwritten digits using a Convolutional Neural Network trained on the MNIST dataset.
 
 The application allows users to draw a handwritten digit from **0 to 9** on a canvas and uses a trained CNN model to predict the digit along with its confidence and probability distribution.
 
