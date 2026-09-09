@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>MNIST Digit Classifier</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <!-- ============================= -->
+        <!-- Header -->
+        <!-- ============================= -->
+
+        <h1>MNIST Digit Classifier</h1>
+
+        <p class="subtitle">
+            Draw a digit from 0 to 9 and let the CNN predict it.
+        </p>
+
+
+        <!-- ============================= -->
+        <!-- Drawing Canvas -->
+        <!-- ============================= -->
+
+        <canvas id="canvas"
+                width="280"
+                height="280">
+        </canvas>
+
+
+        <!-- ============================= -->
+        <!-- Buttons -->
+        <!-- ============================= -->
+
+        <div class="buttons">
+
+            <button id="clearBtn">
+                Clear
+            </button>
+
+            <button id="predictBtn">
+                Predict
+            </button>
+
+        </div>
+
+
+        <!-- ============================= -->
+        <!-- Prediction Result -->
+        <!-- ============================= -->
+
+        <h2 id="result">
+            Prediction: --
+        </h2>
+
+
+        <!-- ============================= -->
+        <!-- Prediction Probabilities -->
+        <!-- ============================= -->
+
+        <div id="probabilityContainer">
+
+            <h3>Prediction Probabilities</h3>
+
+            <div id="probabilities"></div>
+
+        </div>
+
+
+        <!-- ============================= -->
+        <!-- Prediction History -->
+        <!-- ============================= -->
+
+        <div id="historyContainer">
+
+            <h3>Prediction History</h3>
+
+            <div id="history"></div>
+
+            <button id="clearHistoryBtn">
+                Clear History
+            </button>
+
+        </div>
+
+
+        <!-- ============================= -->
+        <!-- About Project -->
+        <!-- ============================= -->
+
+        <div id="aboutContainer">
+
+            <h2>About This Project</h2>
+
+            <p>
+                MNIST Digit Classifier is a machine learning web
+                application that recognizes handwritten digits
+                from 0 to 9 using a Convolutional Neural Network
+                (CNN).
+            </p>
+
+
+            <!-- MNIST -->
+
+            <div class="about-card">
+
+                <h3>What is MNIST?</h3>
+
+                <p>
+                    MNIST is a dataset containing handwritten
+                    digits from 0 to 9. Each image has a size of
+                    28 × 28 pixels and is used widely for
+                    training and testing image classification
+                    models.
+                </p>
+
+            </div>
+
+
+            <!-- CNN -->
+
+            <div class="about-card">
+
+                <h3>How Does the CNN Work?</h3>
+
+                <p>
+                    The CNN learns visual patterns from
+                    handwritten digits. Convolutional layers
+                    extract important features, pooling reduces
+                    the feature size, and fully connected layers
+                    classify the digit.
+                </p>
+
+                <div class="flow">
+
+                    <span>Input Image</span>
+                    <span>→</span>
+                    <span>Convolution</span>
+                    <span>→</span>
+                    <span>Pooling</span>
+                    <span>→</span>
+                    <span>Classification</span>
+                    <span>→</span>
+                    <span>Prediction</span>
+
+                </div>
+
+            </div>
+
+
+            <!-- Model -->
+
+            <div class="about-card">
+
+                <h3>Model Performance</h3>
+
+                <p>
+                    The trained CNN achieves approximately
+                    <strong>98% test accuracy</strong> on the
+                    MNIST dataset.
+                </p>
+
+                <p>
+                    The application also displays the predicted
+                    digit's confidence and the probability
+                    distribution across all ten digits.
+                </p>
+
+            </div>
+
+
+            <!-- Technologies -->
+
+            <div class="about-card">
+
+                <h3>Technologies Used</h3>
+
+                <div class="tech-list">
+
+                    <span>Python</span>
+                    <span>TensorFlow</span>
+                    <span>Keras</span>
+                    <span>NumPy</span>
+                    <span>Flask</span>
+                    <span>HTML</span>
+                    <span>CSS</span>
+                    <span>JavaScript</span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- JavaScript -->
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+
+</html>

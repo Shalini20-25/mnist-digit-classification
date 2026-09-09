@@ -1,0 +1,442 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #eef2f7;
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 20px;
+}
+
+.container {
+    width: 100%;
+    max-width: 550px;
+
+    background: white;
+
+    padding: 35px;
+
+    border-radius: 20px;
+
+    text-align: center;
+
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.12);
+}
+
+
+/* ============================= */
+/* Header */
+/* ============================= */
+
+h1 {
+    font-size: 32px;
+    margin-bottom: 10px;
+    color: #222;
+}
+
+.subtitle {
+    color: #666;
+    margin-bottom: 25px;
+    font-size: 15px;
+}
+
+
+/* ============================= */
+/* Canvas */
+/* ============================= */
+
+#canvas {
+    width: 280px;
+    height: 280px;
+
+    background: black;
+
+    border-radius: 12px;
+
+    border: 3px solid #d7dce2;
+
+    cursor: crosshair;
+
+    touch-action: none;
+
+    display: block;
+
+    margin: 0 auto 25px;
+}
+
+
+/* ============================= */
+/* Buttons */
+/* ============================= */
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+button {
+    border: none;
+
+    padding: 12px 28px;
+
+    border-radius: 10px;
+
+    font-size: 16px;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+#predictBtn {
+    background: #222;
+    color: white;
+}
+
+#clearBtn {
+    background: #e5e7eb;
+    color: #222;
+}
+
+button:hover {
+    transform: translateY(-2px);
+}
+
+
+/* ============================= */
+/* Prediction Result */
+/* ============================= */
+
+#result {
+    margin-top: 25px;
+
+    font-size: 24px;
+
+    color: #222;
+}
+
+
+/* ============================= */
+/* Probability Section */
+/* ============================= */
+
+#probabilityContainer {
+    margin-top: 30px;
+
+    text-align: left;
+}
+
+#probabilityContainer h3 {
+    text-align: center;
+
+    margin-bottom: 15px;
+
+    color: #333;
+}
+
+.probability-row {
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    margin: 8px 0;
+}
+
+.digit {
+    width: 20px;
+
+    font-weight: bold;
+
+    text-align: center;
+}
+
+.bar-container {
+    flex: 1;
+
+    height: 12px;
+
+    background: #eeeeee;
+
+    border-radius: 10px;
+
+    overflow: hidden;
+}
+
+.bar {
+    height: 100%;
+
+    background: #222;
+
+    border-radius: 10px;
+
+    transition: width 0.4s ease;
+}
+
+.percentage {
+    width: 55px;
+
+    font-size: 13px;
+
+    text-align: right;
+}
+
+
+/* ============================= */
+/* Prediction History */
+/* ============================= */
+
+#historyContainer {
+    margin-top: 35px;
+
+    text-align: left;
+}
+
+#historyContainer h3 {
+    text-align: center;
+
+    margin-bottom: 15px;
+
+    color: #333;
+}
+
+.history-item {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    padding: 12px 15px;
+
+    margin: 8px 0;
+
+    background: #f5f5f5;
+
+    border-radius: 10px;
+
+    font-size: 15px;
+}
+
+.history-digit {
+    font-size: 20px;
+
+    font-weight: bold;
+}
+
+.history-confidence {
+    color: #555;
+}
+
+
+/* ============================= */
+/* Clear History */
+/* ============================= */
+
+#clearHistoryBtn {
+    display: block;
+
+    margin: 20px auto 0;
+
+    background: #e5e7eb;
+
+    color: #222;
+
+    padding: 10px 20px;
+
+    font-size: 14px;
+
+    border-radius: 8px;
+}
+
+#clearHistoryBtn:hover {
+    background: #d1d5db;
+}
+
+
+/* ============================= */
+/* About Section */
+/* ============================= */
+
+#aboutContainer {
+    margin-top: 45px;
+
+    padding-top: 30px;
+
+    border-top: 1px solid #e5e7eb;
+
+    text-align: left;
+}
+
+#aboutContainer > h2 {
+    text-align: center;
+
+    font-size: 24px;
+
+    margin-bottom: 15px;
+
+    color: #222;
+}
+
+#aboutContainer > p {
+    text-align: center;
+
+    color: #666;
+
+    line-height: 1.6;
+
+    font-size: 14px;
+
+    margin-bottom: 25px;
+}
+
+
+/* ============================= */
+/* About Cards */
+/* ============================= */
+
+.about-card {
+    background: #8ee6ff;
+
+    padding: 20px;
+
+    border-radius: 12px;
+
+    margin-bottom: 15px;
+}
+
+.about-card h3 {
+    font-size: 17px;
+
+    color: #ce3636;
+
+    margin-bottom: 10px;
+}
+
+.about-card p {
+    color: #030303;
+
+    font-size: 14px;
+
+    line-height: 1.6;
+
+    margin-bottom: 10px;
+}
+
+.about-card p:last-child {
+    margin-bottom: 0;
+}
+
+
+/* ============================= */
+/* CNN Flow */
+/* ============================= */
+
+.flow {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 7px;
+
+    margin-top: 15px;
+
+    font-size: 12px;
+
+    color: #0a0a0a;
+}
+
+.flow span {
+    background: rgb(210, 188, 228);
+
+    padding: 6px 8px;
+
+    border-radius: 6px;
+
+    border: 1px solid #ddd;
+}
+
+
+/* ============================= */
+/* Technologies */
+/* ============================= */
+
+.tech-list {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 8px;
+
+    margin-top: 12px;
+}
+
+.tech-list span {
+    background: rgb(225, 168, 213);
+
+    border: 1px solid #ce95c4;
+
+    padding: 7px 11px;
+
+    border-radius: 8px;
+
+    font-size: 13px;
+
+    color: #040404;
+}
+
+
+/* ============================= */
+/* Mobile Responsive */
+/* ============================= */
+
+@media (max-width: 600px) {
+
+    body {
+        padding: 10px;
+    }
+
+    .container {
+        padding: 25px 18px;
+    }
+
+    h1 {
+        font-size: 26px;
+    }
+
+    #canvas {
+        width: 250px;
+        height: 250px;
+    }
+
+    .buttons {
+        gap: 10px;
+    }
+
+    button {
+        padding: 11px 22px;
+    }
+
+    #result {
+        font-size: 20px;
+    }
+
+    .flow {
+        font-size: 11px;
+    }
+
+}
